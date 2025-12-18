@@ -4,20 +4,30 @@ import LuxuryReveal from './ui/LuxuryReveal';
 import { HERO_TITLE, HERO_SUBTITLE, HERO_DESC } from '../constants';
 import { motion } from 'framer-motion';
 
+import { useMobile } from '../hooks/useMobile';
+
 const Hero: React.FC = () => {
+  const isMobile = useMobile();
+
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface to-background">
-      {/* Animated Grid Background Effect */}
-      <motion.div 
-        animate={{ 
-          backgroundPosition: ["0px 0px", "-24px 0px"] 
-        }}
-        transition={{ 
-          duration: 0.5, 
-          repeat: Infinity, 
-          ease: "linear" 
-        }}
-        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" 
+      
+      {/* CSS-only Background Animation */}
+      <style>
+        {`
+          @keyframes grid-scroll {
+            0% { background-position: 0px 0px; }
+            100% { background-position: -24px 0px; }
+          }
+          .animate-grid {
+            animation: grid-scroll 0.5s linear infinite;
+          }
+        `}
+      </style>
+      
+      {/* Static Background on Mobile, CSS Animation on Desktop */}
+      <div 
+        className={`absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none ${!isMobile ? 'animate-grid' : ''}`}
       />
 
       <div className="max-w-5xl mx-auto text-center z-10">

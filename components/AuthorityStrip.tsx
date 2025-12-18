@@ -7,7 +7,7 @@ import {
 
 const AuthorityStrip: React.FC = () => {
   // Duplicate the array to create a seamless loop
-  const infiniteStack = [...TECH_STACK, ...TECH_STACK];
+  const infiniteStack = React.useMemo(() => [...TECH_STACK, ...TECH_STACK], []);
 
   const getIcon = (name: string, category: string) => {
     // Specific icon mapping
@@ -33,7 +33,7 @@ const AuthorityStrip: React.FC = () => {
       <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[#050505] to-transparent z-10" />
       <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[#050505] to-transparent z-10" />
       
-      <div className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused]">
+      <div className="flex w-max animate-infinite-scroll hover:[animation-play-state:paused] will-change-transform">
         {infiniteStack.map((tech, index) => (
           <div
             key={`${tech.name}-${index}`}

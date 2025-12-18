@@ -35,6 +35,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
                 <img 
                 src={project.imageUrl} 
                 alt={project.title} 
+                loading="lazy"
+                decoding="async"
                 className="w-full aspect-video object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
                 style={{ 
                     objectPosition: project.imageConfig?.position || 'center',

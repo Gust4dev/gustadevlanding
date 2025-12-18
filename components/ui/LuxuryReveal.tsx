@@ -11,11 +11,17 @@ interface LuxuryRevealProps {
 const LuxuryReveal: React.FC<LuxuryRevealProps> = ({ text, delay = 0, className = "", as: Component = 'h1' }) => {
   const words = text.split(" ");
 
+  /* New logic for mobile optimization */
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   const container = {
     hidden: { opacity: 0 },
     visible: (i = 1) => ({
       opacity: 1,
-      transition: { staggerChildren: 0.12, delayChildren: 0.04 * i + delay },
+      transition: { 
+        staggerChildren: isMobile ? 0.05 : 0.12, 
+        delayChildren: 0.04 * i + delay 
+      },
     }),
   };
 
@@ -23,19 +29,20 @@ const LuxuryReveal: React.FC<LuxuryRevealProps> = ({ text, delay = 0, className 
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
+      
       transition: {
-        type: "spring",
+        type: isMobile ? "tween" : "spring", // Use cheaper tween on mobile
         damping: 12,
         stiffness: 100,
+        duration: isMobile ? 0.3 : undefined // Faster, linear duration for tween
       },
     },
     hidden: {
       opacity: 0,
       y: 20,
-      filter: "blur(10px)",
+      
       transition: {
-        type: "spring",
+        type: isMobile ? "tween" : "spring",
         damping: 12,
         stiffness: 100,
       },

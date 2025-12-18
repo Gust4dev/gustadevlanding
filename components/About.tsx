@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { PROFILE_CONFIG } from '../constants';
 
 const About: React.FC = () => {
   return (
@@ -18,9 +19,13 @@ const About: React.FC = () => {
             <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 relative">
                 <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur opacity-50"></div>
                 <img 
-                    src="https://picsum.photos/id/1005/400/400" 
+                    src={PROFILE_CONFIG.imageUrl} 
                     alt="Gustavo" 
-                    className="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-10"
+                    className="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-10 transition-transform duration-500 hover:scale-110"
+                    style={{
+                        objectPosition: PROFILE_CONFIG.position,
+                        transform: `scale(${PROFILE_CONFIG.zoom})`
+                    }}
                 />
             </div>
 

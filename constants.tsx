@@ -24,16 +24,15 @@ export const TECH_STACK: TechItem[] = [
 ];
 
 export const PROJECTS: Project[] = [
-  // --- ENGINEERING & SAAS ---
   {
     id: 'os-saas',
     title: 'OS-SaaS (Oficina Inteligente)',
     description: 'Plataforma ERP Multi-tenant com isolamento de dados rigoroso (RBAC), geração de laudos em PDF em tempo real e sistema financeiro integrado via Stripe.',
     category: ProjectCategory.SAAS,
     tags: ['Multi-tenancy', 'RBAC Security', 'Real-time PDF', 'Stripe', 'Next.js 14'],
-    imageUrl: 'https://picsum.photos/id/48/800/600',
-    demoLink: '#',
-    githubLink: '#',
+    imageUrl: '/images/projects/SaaS OS.webp',
+    imageConfig: { zoom: 1.0, position: 'center' }, // ADJUST HERE: zoom (e.g. 1.2) and position (e.g. 'top' or '50% 20%')
+    githubLink: 'https://github.com/Gust4dev/OS-SaaS',
     isFeatured: true,
     isInDevelopment: true,
   },
@@ -43,8 +42,10 @@ export const PROJECTS: Project[] = [
     description: 'App de logística estilo Uber. Conecta motoristas e cargas usando geolocalização e comunicação via WebSockets para tracking em tempo real.',
     category: ProjectCategory.SAAS,
     tags: ['Socket.io', 'Leaflet Maps', 'Real-time', 'Node.js'],
-    imageUrl: 'https://picsum.photos/id/111/800/600', 
-    githubLink: '#',
+    imageUrl: '/images/projects/FreteExpress.webp', 
+    imageConfig: { zoom: 1.0, position: 'center' }, // ADJUST HERE
+    demoLink: 'https://meufreteexpress.com.br/',
+    githubLink: 'https://github.com/Gust4dev/freteexpress',
   },
 
   // --- DEEP TECH (These display differently) ---
@@ -54,6 +55,7 @@ export const PROJECTS: Project[] = [
     description: 'Assistente de arquitetura generativa integrado com Google Gemini. Transforma prompts em visualizações de projetos.',
     category: ProjectCategory.DEEP_TECH,
     tags: ['GenAI', 'LLM Integration', 'Python'],
+    githubLink: 'https://github.com/Gust4dev/VECT',
   },
   {
     id: 'psicare-api',
@@ -61,6 +63,7 @@ export const PROJECTS: Project[] = [
     description: 'Backend médico com rigoroso controle de acesso (RBAC) e criptografia para dados sensíveis de pacientes.',
     category: ProjectCategory.DEEP_TECH,
     tags: ['MongoDB', 'Security First', 'Node.js'],
+    githubLink: 'https://github.com/Gust4dev/PsicareAPI-Atualizada',
   },
   {
     id: 'robocode',
@@ -68,6 +71,7 @@ export const PROJECTS: Project[] = [
     description: 'Implementação de algoritmos de mira preditiva e movimentação evasiva em Java puro para competição de tanques autônomos.',
     category: ProjectCategory.DEEP_TECH,
     tags: ['Java', 'Algorithms', 'Physics'],
+    githubLink: 'https://github.com/Gust4dev/Robocode_gusta',
   },
 
   // --- HIGH-END DESIGN ---
@@ -77,12 +81,16 @@ export const PROJECTS: Project[] = [
     description: 'Plataforma de streaming e portfólio para produtora de vídeo. Integração com API do Vimeo e player customizado.',
     category: ProjectCategory.DESIGN,
     tags: ['Streaming API', 'Dark UI', 'Interactive'],
-    imageUrl: 'https://picsum.photos/id/20/800/600',
+    imageUrl: '/images/projects/FilmtechLuxury.webp',
+    imageConfig: { zoom: 1.0, position: 'center' }, // ADJUST HERE
+    /* 
     comparisonImages: {
-      before: 'https://picsum.photos/id/133/800/600',
-      after: 'https://picsum.photos/id/98/800/600',
+      before: '/images/projects/filmtech-before.webp',
+      after: '/images/projects/filmtech-after.webp',
     },
-    demoLink: '#',
+    */
+    demoLink: 'https://filmtech.vercel.app',
+    githubLink: 'https://github.com/Gust4dev/filmtech',
   },
   {
     id: 'daniel-imobi',
@@ -90,20 +98,30 @@ export const PROJECTS: Project[] = [
     description: 'Portfolio Imobiliário de Luxo com animações Framer Motion e galeria Lightbox customizada.',
     category: ProjectCategory.DESIGN,
     tags: ['UX/UI', 'Framer Motion', 'Conversion Rate'],
-    imageUrl: 'https://picsum.photos/id/10/800/600',
+    imageUrl: '/images/projects/DanielImobi.webp',
+    imageConfig: { zoom: 1.0, position: 'center' }, // ADJUST HERE
+    /*
     comparisonImages: {
-      before: 'https://picsum.photos/id/175/800/600',
-      after: 'https://picsum.photos/id/164/800/600',
+      before: '/images/projects/daniel-imobi-before.webp',
+      after: '/images/projects/daniel-imobi-after.webp',
     },
-    demoLink: '#',
+    */
+    demoLink: 'https://danielimobi.vercel.app',
+    githubLink: 'https://github.com/Gust4dev/danielimobi',
   }
 ];
 
 export const SOCIAL_LINKS = [
-  { name: 'GitHub', url: 'https://github.com', icon: Github },
-  { name: 'LinkedIn', url: 'https://linkedin.com', icon: Linkedin },
-  { name: 'Instagram', url: 'https://instagram.com', icon: Instagram },
-  { name: 'Email', url: 'mailto:contact@gustavo.dev', icon: Mail },
+  { name: 'GitHub', url: 'https://github.com/Gust4dev', icon: Github },
+  { name: 'LinkedIn', url: 'https://www.linkedin.com/in/gustadev/', icon: Linkedin },
+  { name: 'Instagram', url: 'https://www.instagram.com/gustaaa__', icon: Instagram },
+  { name: 'Email', url: 'mailto:gustavogomes034@outlook.com', icon: Mail },
 ];
 
-export const WHATSAPP_NUMBER = "5511999999999";
+export const WHATSAPP_NUMBER = "556198031185";
+
+export const PROFILE_CONFIG = {
+  imageUrl: '/images/projects/Gustadev.webp',
+  zoom: 1.2,
+  position: 'center',
+};

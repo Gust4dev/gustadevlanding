@@ -22,6 +22,10 @@ export interface Project {
     before: string;
     after: string;
   };
+  imageConfig?: {
+    zoom?: number;
+    position?: string; // e.g., 'center', 'top', '50% 50%'
+  };
   demoLink?: string;
   githubLink?: string;
   isFeatured?: boolean;

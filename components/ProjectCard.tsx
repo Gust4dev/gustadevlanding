@@ -31,22 +31,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           />
         ) : (
           <div className="relative rounded-lg overflow-hidden border border-white/10 group-hover:border-blue-500/30 transition-all shadow-2xl bg-surface">
-             {/* Tech/Code Overlay for Engineering projects */}
-             {isEngineering && (
-                <div className="absolute top-4 right-4 z-20 flex gap-2">
-                     {project.isInDevelopment && (
-                         <span className="px-2 py-1 bg-yellow-500/10 text-yellow-500 text-xs font-mono uppercase tracking-wider rounded border border-yellow-500/20 flex items-center gap-1">
-                             <Hammer size={12} /> Em Dev
-                         </span>
-                     )}
-                </div>
-             )}
-
             {project.imageUrl ? (
                 <img 
                 src={project.imageUrl} 
                 alt={project.title} 
-                className="w-full aspect-video object-cover transform group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                className="w-full aspect-video object-cover transform group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+                style={{ 
+                    objectPosition: project.imageConfig?.position || 'center',
+                    transform: `scale(${project.imageConfig?.zoom || 1})`
+                }}
                 />
             ) : (
                 <div className="w-full aspect-video flex items-center justify-center bg-white/5">
@@ -64,7 +57,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
       <div className={index % 2 === 1 ? 'md:col-start-1' : ''}>
         <div className="flex items-center gap-3 mb-4">
            <span className={`px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-white/5 border border-white/10 ${isEngineering ? 'text-blue-400' : 'text-purple-400'}`}>
-             {isEngineering ? 'Sistemas & SaaS' : 'Design & UI'}
+             {isEngineering 
+               ? (project.isInDevelopment ? 'Em Desenvolvimento' : 'Sistema') 
+               : 'Design & UI'
+             }
            </span>
         </div>
         

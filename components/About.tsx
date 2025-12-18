@@ -4,7 +4,7 @@ import { PROFILE_CONFIG } from '../constants';
 
 const About: React.FC = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden bg-[#080808]">
+    <section id="about" className="py-24 px-4 relative overflow-hidden bg-[#080808]">
         {/* Background Decorative Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl -z-10" />

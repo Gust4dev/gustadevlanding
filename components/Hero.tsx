@@ -7,8 +7,18 @@ import { motion } from 'framer-motion';
 const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-surface to-background">
-      {/* Grid Background Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" />
+      {/* Animated Grid Background Effect */}
+      <motion.div 
+        animate={{ 
+          backgroundPosition: ["0px 0px", "-24px 0px"] 
+        }}
+        transition={{ 
+          duration: 0.5, 
+          repeat: Infinity, 
+          ease: "linear" 
+        }}
+        className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] pointer-events-none" 
+      />
 
       <div className="max-w-5xl mx-auto text-center z-10">
         
@@ -58,7 +68,7 @@ const Hero: React.FC = () => {
             <Code2 size={20} /> Ver Engenharia
           </button>
           <a 
-            href="https://github.com" 
+            href="https://github.com/Gust4dev" 
             target="_blank" 
             rel="noreferrer"
             className="px-8 py-4 flex items-center justify-center gap-2 border border-white/20 text-white rounded hover:bg-white/5 transition-colors w-full sm:w-auto"

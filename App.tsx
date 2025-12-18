@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import AuthorityStrip from './components/AuthorityStrip';
 import About from './components/About';
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <main className="min-h-screen bg-background text-white selection:bg-blue-500/30 selection:text-blue-200 font-sans cursor-default">
+      <Navbar />
       <Hero />
       <AuthorityStrip />
       

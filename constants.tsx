@@ -111,6 +111,19 @@ export const PROJECTS: Project[] = [
   }
 ];
 
+export const BRAND_CONFIG = {
+  logoUrl: '/images/logo.webp',
+  name: 'Gusta Dev',
+  navbarLogo: {
+    zoom: 2.0,
+    position: 'center'
+  },
+  footerLogo: {
+    zoom: 2.0,
+    position: 'center'
+  }
+};
+
 export const SOCIAL_LINKS = [
   { name: 'GitHub', url: 'https://github.com/Gust4dev', icon: Github },
   { name: 'LinkedIn', url: 'https://www.linkedin.com/in/gustadev/', icon: Linkedin },

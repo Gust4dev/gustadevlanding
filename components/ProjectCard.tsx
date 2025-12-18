@@ -84,6 +84,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           {project.demoLink && (
             <a 
               href={project.demoLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 bg-white text-black font-semibold rounded hover:bg-blue-400 transition-colors"
             >
               Ver Projeto <ExternalLink size={18} />
@@ -92,6 +94,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
           {project.githubLink && (
             <a 
               href={project.githubLink}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 px-6 py-3 border border-white/20 text-white rounded hover:bg-white/10 transition-colors"
             >
               <Github size={18} /> Code

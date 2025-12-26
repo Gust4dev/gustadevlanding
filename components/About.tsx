@@ -1,52 +1,77 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { PROFILE_CONFIG } from '../constants';
+import { Shield, Zap, Cpu, Globe } from 'lucide-react';
+import LuxuryReveal from './ui/LuxuryReveal';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-24 px-4 relative overflow-hidden bg-[#080808]">
-        {/* Background Decorative Elements */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl -z-10" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-600/5 rounded-full blur-3xl -z-10" />
+    <section id="about" className="py-40 bg-background overflow-hidden">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-12 gap-20 items-center">
+          
+          {/* Lado Esquerdo: Imagem com Overlay Técnico */}
+          <div className="lg:col-span-5 relative group">
+            <div className="absolute -top-10 -left-10 text-[12vw] font-display font-black text-white/[0.02] leading-none pointer-events-none">
+              GUSTA
+            </div>
+            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden glass">
+              <motion.img 
+                src="/images/projects/Gustadev.webp" 
+                alt="Gustavo" 
+                className="w-full h-full object-cover"
+                initial={{ filter: "grayscale(100%)", opacity: 0.5 }}
+                whileInView={{ filter: "grayscale(0%)", opacity: 1 }}
+                viewport={{ once: true, margin: "-20%" }}
+                transition={{ duration: 1.2 }}
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+            </div>
+            
+            {/* Floating Tech Stats */}
+            <motion.div 
+              whileInView={{ x: [0, 20, 0] }} 
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -right-8 top-1/4 p-6 glass rounded-2xl backdrop-blur-3xl"
+            >
+              <div className="text-accent font-mono text-xs mb-1">UPTIME</div>
+              <div className="text-2xl font-display font-bold text-white tracking-tighter">99.9%</div>
+            </motion.div>
+          </div>
 
-      <div className="max-w-4xl mx-auto">
-        <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="bg-surface border border-white/5 p-8 md:p-12 rounded-2xl flex flex-col md:flex-row gap-12 items-center"
-        >
-            <div className="w-32 h-32 md:w-48 md:h-48 shrink-0 relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-full blur opacity-50"></div>
-                <img 
-                    src={PROFILE_CONFIG.imageUrl} 
-                    alt="Gustavo" 
-                    className="w-full h-full object-cover rounded-full border-2 border-white/10 relative z-10 transition-transform duration-500 hover:scale-110"
-                    style={{
-                        objectPosition: PROFILE_CONFIG.position,
-                        transform: `scale(${PROFILE_CONFIG.zoom})`
-                    }}
-                />
+          {/* Lado Direito: Texto Editorial */}
+          <div className="lg:col-span-7 space-y-12">
+            <div className="space-y-6">
+              <span className="text-accent font-mono text-xs tracking-[0.5em] uppercase">Architecture & Mindset</span>
+              <LuxuryReveal 
+                text="TRANSFORMANDO COMPLEXIDADE EM ELEGÂNCIA TÉCNICA." 
+                className="text-5xl md:text-7xl font-display font-bold text-white tracking-tighter leading-[0.9]"
+              />
+              <p className="text-secondary text-xl font-light leading-relaxed max-w-2xl">
+                Como Arquiteto de SaaS e Engenheiro Full-Cycle, meu foco não é apenas "codar", mas construir ecossistemas digitais resilientes, escaláveis e esteticamente impecáveis.
+              </p>
             </div>
 
-            <div className="text-center md:text-left">
-                <h2 className="text-2xl font-display font-bold text-white mb-4">Sobre o Engenheiro</h2>
-                <p className="text-secondary text-lg leading-relaxed mb-6">
-                    "Não sou apenas um desenvolvedor, sou um <span className="text-white font-medium">Full-Cycle Engineer</span>. 
-                    Minha expertise vai além do código: entendo como um banco de dados mal estruturado afeta a conversão no frontend."
-                </p>
-                <div className="grid grid-cols-2 gap-4 text-left">
-                    <div className="space-y-1">
-                        <h4 className="text-white font-bold text-sm">Backend & Logic</h4>
-                        <p className="text-secondary text-xs">Java, Node.js, Arquitetura de Microsserviços.</p>
-                    </div>
-                    <div className="space-y-1">
-                        <h4 className="text-white font-bold text-sm">Visual & Product</h4>
-                        <p className="text-secondary text-xs">Interfaces High-End, UX/UI, Animações.</p>
-                    </div>
+            <div className="grid grid-cols-2 gap-12 border-t border-white/5 pt-12">
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-white font-display font-bold uppercase tracking-widest text-xs">
+                  <Cpu size={16} className="text-accent" /> Systems
                 </div>
+                <p className="text-secondary/60 text-sm leading-relaxed">
+                  Desenvolvimento de arquiteturas baseadas em microserviços e alta disponibilidade.
+                </p>
+              </div>
+              <div className="space-y-4">
+                <div className="flex items-center gap-3 text-white font-display font-bold uppercase tracking-widest text-xs">
+                  <Globe size={16} className="text-accent" /> Global Reach
+                </div>
+                <p className="text-secondary/60 text-sm leading-relaxed">
+                  Experiência em projetos internacionais focados em performance extrema.
+                </p>
+              </div>
             </div>
-        </motion.div>
+          </div>
+
+        </div>
       </div>
     </section>
   );

@@ -8,8 +8,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Space Grotesk', 'sans-serif'],
+        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+        display: ['"Space Grotesk"', 'sans-serif'],
+        subtitle: ['"Roboto Flex"', 'sans-serif'],
+        lexend: ['"Lexend"', 'sans-serif'],
+        'lexend-deca': ['"Lexend Deca"', 'sans-serif'],
+        zalando: ['"Zalando Sans Expanded"', 'sans-serif'], // Fallback needed if not available
+        hand: ['"Delius"', 'cursive'],
+        script: ['"Updock"', 'cursive'],
       },
       colors: {
         background: '#0a0a0a',

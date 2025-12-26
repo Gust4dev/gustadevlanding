@@ -1,45 +1,80 @@
 @import "tailwindcss";
 
 @theme {
-  --font-sans: 'Inter', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
+  --font-sans: "Be Vietnam Pro", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-subtitle: "Roboto Flex", sans-serif;
+  --font-lexend: "Lexend", sans-serif;
+  --font-hand: "Delius", cursive;
 
-  --color-background: #0a0a0a;
-  --color-surface: #121212;
+  --color-background: #050508;
+  --color-surface: #0a0a0f;
   --color-primary: #ffffff;
   --color-secondary: #a1a1aa;
   --color-accent: #3b82f6;
 
-  --animate-infinite-scroll: infinite-scroll 25s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
 
-  @keyframes infinite-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-100%); }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
   }
 }
 
-/* Custom Scrollbar */
+:root {
+  color-scheme: dark;
+  --cursor-size: 20px;
+}
+
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
+
 ::-webkit-scrollbar-track {
-  background: var(--color-background); 
+  background: var(--color-background);
 }
+
 ::-webkit-scrollbar-thumb {
-  background: #333; 
-  border-radius: 4px;
+  background: #1a1a2e;
+  border-radius: 10px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: var(--color-accent);
 }
 
-/* Base Body Styles */
 body {
-    /* applying utilities directly */
-    @apply bg-background text-primary overflow-x-hidden;
+  @apply bg-background text-primary antialiased selection:bg-accent/30 selection:text-white overflow-x-hidden;
+  font-feature-settings: "ss01", "ss02", "cv01";
 }
 
-/* Utility for infinite scroll if needed explicitly */
-.animate-infinite-scroll {
-    animation: infinite-scroll 25s linear infinite;
+.glass {
+  @apply backdrop-blur-xl bg-white/[0.02] border border-white/10;
+}
+
+.noise-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  opacity: 0.03;
+  z-index: 9999;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/feTurbulence%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.parallax-layer {
+  will-change: transform;
+}
+
+* {
+  cursor: none !important;
+}
+
+@media (max-width: 768px) {
+  * {
+    cursor: auto !important;
+  }
 }

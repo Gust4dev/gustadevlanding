@@ -1,113 +1,82 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { BRAND_CONFIG } from '../constants';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Terminal } from 'lucide-react';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrolled = window.scrollY > 50;
-      if (scrolled !== isScrolled) {
-        setIsScrolled(scrolled);
-      }
-    };
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [isScrolled]);
+  }, []);
 
   const navLinks = [
-    { name: 'Projetos', href: '#projects' },
+    { name: 'Engenharia', href: '#projects' },
     { name: 'Sobre', href: '#about' },
+    { name: 'Contato', href: 'https://wa.me/5562995325553' },
   ];
 
-  const scrollToSection = (id: string) => {
-    const element = document.querySelector(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-    setMobileMenuOpen(false);
-  };
-
   return (
-    <nav 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-black/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-6'
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        <div className="flex items-center gap-3 group cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <div className="relative w-10 h-10 overflow-hidden rounded-lg bg-blue-900 border border-white/10 flex items-center justify-center">
-             <img 
-               src={BRAND_CONFIG.logoUrl} 
-               alt="Logo" 
-               className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-               style={{
-                 transform: `scale(${BRAND_CONFIG.navbarLogo.zoom})`,
-                 objectPosition: BRAND_CONFIG.navbarLogo.position
-               }}
-             />
-          </div>
-          <span className="text-xl font-display font-bold text-white tracking-tighter">
-            {BRAND_CONFIG.name.split(' ')[0]}<span className="text-blue-500">{BRAND_CONFIG.name.split(' ')[1]}</span>
-          </span>
-        </div>
-
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.name}
-              onClick={() => scrollToSection(link.href)}
-              className="text-sm font-medium text-secondary hover:text-white transition-colors uppercase tracking-widest"
-            >
-              {link.name}
-            </button>
-          ))}
-          <button 
-             onClick={() => scrollToSection('#contact')}
-             className="px-5 py-2 bg-white text-black text-xs font-bold rounded hover:bg-white/90 transition-all uppercase tracking-widest"
-          >
-            Contato
-          </button>
-        </div>
-
-        {/* Mobile Toggle */}
-        <button 
-          className="md:hidden text-white p-2"
-          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'}`}>
+      <div className="container mx-auto px-6 flex justify-center">
+        <motion.div 
+          className="glass rounded-full px-6 py-3 flex items-center gap-12"
+          initial={{ y: -100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
-          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+          {/* Logo Section */}
+          <a href="#" className="flex items-center gap-2 group">
+            <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center group-hover:bg-accent transition-colors duration-500">
+              <Terminal size={16} className="text-black" />
+            </div>
+            <span className="font-display font-bold text-white tracking-tighter uppercase text-sm">Gust4dev</span>
+          </a>
+
+          {/* Desktop Links */}
+          <div className="hidden md:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                className="text-[10px] font-mono font-bold text-secondary hover:text-white uppercase tracking-[0.2em] transition-colors"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+
+          <button 
+            className="md:hidden text-white"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </motion.div>
       </div>
 
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-black border-b border-white/10 overflow-hidden"
+          <motion.div 
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-full left-0 w-full px-6 pt-4 md:hidden"
           >
-            <div className="px-4 py-8 flex flex-col gap-6 items-center">
+            <div className="glass rounded-3xl p-8 space-y-6">
               {navLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-lg font-medium text-secondary hover:text-white transition-colors uppercase tracking-widest"
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block text-2xl font-display font-bold text-white"
                 >
                   {link.name}
-                </button>
+                </a>
               ))}
-              <button 
-                onClick={() => scrollToSection('#contact')}
-                className="w-full py-4 bg-white text-black text-sm font-bold rounded uppercase tracking-widest"
-              >
-                Contato
-              </button>
             </div>
           </motion.div>
         )}

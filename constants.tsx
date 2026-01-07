@@ -100,7 +100,7 @@ export const PROJECTS: Project[] = [
   // --- HIGH-END DESIGN ---
   {
     id: "filmtech",
-    title: "FilmTech Productions",
+    title: "Filmtech Luxury",
     description:
       "Plataforma de streaming e portfólio para produtora de vídeo. Integração com API do Vimeo e player customizado.",
     category: ProjectCategory.DESIGN,
@@ -113,12 +113,12 @@ export const PROJECTS: Project[] = [
       after: '/images/projects/filmtech-after.webp',
     },
     */
-    demoLink: "https://filmtech.vercel.app",
+    demoLink: "https://www.filmtechluxury.com.br/",
     githubLink: "https://github.com/Gust4dev/filmtech",
   },
   {
-    id: "daniel-imobi",
-    title: "Daniel Imobi Luxury",
+    id: "feitosa-curadoria",
+    title: "Feitosa Curadoria",
     description:
       "Portfolio Imobiliário de Luxo com animações Framer Motion e galeria Lightbox customizada.",
     category: ProjectCategory.DESIGN,
@@ -131,7 +131,7 @@ export const PROJECTS: Project[] = [
       after: '/images/projects/daniel-imobi-after.webp',
     },
     */
-    demoLink: "https://danielimobi.vercel.app",
+    demoLink: "https://www.feitosacuradoria.com.br/",
     githubLink: "https://github.com/Gust4dev/danielimobi",
   },
 ];

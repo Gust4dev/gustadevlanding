@@ -16,8 +16,13 @@
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-20px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
   }
 }
 
@@ -67,14 +72,4 @@ body {
 
 .parallax-layer {
   will-change: transform;
-}
-
-* {
-  cursor: none !important;
-}
-
-@media (max-width: 768px) {
-  * {
-    cursor: auto !important;
-  }
 }

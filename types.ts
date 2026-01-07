@@ -37,3 +37,32 @@ export interface SocialLink {
   url: string;
   icon: LucideIcon;
 }
+
+// Templates Marketplace Types
+export interface TemplatePackage {
+  id: string;
+  tier: 'bronze' | 'silver' | 'gold';
+  name: string;
+  price: number;
+  highlight?: boolean;
+  features: string[];
+  supportDays: number | 'vitalicio';
+}
+
+export interface Template {
+  id: string;
+  slug: string;
+  title: string;
+  description: string;
+  icon: LucideIcon;
+  color: string;
+  previewImage: string;
+  imageConfig?: {
+    zoom?: number;           // 1.0 = 100%, 1.5 = 150%
+    position?: string;       // 'center', 'top', '50% 20%'
+  };
+  screenshots: string[];
+  packages: TemplatePackage[];
+  tags?: string[];
+  demoUrl?: string;
+}

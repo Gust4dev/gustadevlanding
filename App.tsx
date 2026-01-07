@@ -1,23 +1,14 @@
-import React, { Suspense, useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import { PROJECTS, TEMPLATES } from "./constants";
-import { ProjectCategory } from "./types";
-
-const AuthorityStrip = React.lazy(() => import("./components/AuthorityStrip"));
-const About = React.lazy(() => import("./components/About"));
-const Footer = React.lazy(() => import("./components/Footer"));
-const WhatsAppButton = React.lazy(() => import("./components/WhatsAppButton"));
-const EngineeringSection = React.lazy(
-  () => import("./components/sections/EngineeringSection")
-);
-const TemplatesSection = React.lazy(
-  () => import("./components/sections/TemplatesSection")
-);
-const DesignSection = React.lazy(
-  () => import("./components/sections/DesignSection")
-);
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { motion } from "framer-motion";
+import { Home } from "./routes/Home";
+import { TemplatePage } from "./routes/TemplatePage";
+import { BlogPage } from "./routes/BlogPage";
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -43,50 +34,38 @@ const CustomCursor = () => {
   );
 };
 
+const ScrollToTop = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.replace("#", ""));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
+
 function App() {
-  const saasProjects = PROJECTS.filter(
-    (p) => p.category === ProjectCategory.SAAS
-  );
-  const designProjects = PROJECTS.filter(
-    (p) => p.category === ProjectCategory.DESIGN
-  );
-
   return (
-    <div className="relative">
-      <div className="noise-bg" />
-      <CustomCursor />
+    <Router>
+      <ScrollToTop />
+      <div className="relative">
+        <div className="noise-bg" />
+        <CustomCursor />
 
-      <main className="flex flex-col">
-        <Navbar />
-
-        <AnimatePresence mode="wait">
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <Hero />
-
-            <Suspense fallback={<div className="h-20" />}>
-              <AuthorityStrip />
-
-              <div
-                id="projects"
-                className="container mx-auto px-6 py-32 space-y-40"
-              >
-                <EngineeringSection projects={saasProjects} />
-                <TemplatesSection templates={TEMPLATES} />
-                <DesignSection projects={designProjects} />
-              </div>
-
-              <About />
-              <Footer />
-              <WhatsAppButton />
-            </Suspense>
-          </motion.div>
-        </AnimatePresence>
-      </main>
-    </div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/template/:slug" element={<TemplatePage />} />
+          <Route path="/blog/:slug" element={<BlogPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

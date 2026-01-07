@@ -1,54 +1,93 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Terminal } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, Terminal } from "lucide-react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleNavigation = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+
+    if (href.startsWith("http")) {
+      window.open(href, "_blank");
+      return;
+    }
+
+    if (href === "#") {
+      if (location.pathname !== "/") {
+        navigate("/");
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+      return;
+    }
+
+    if (location.pathname !== "/") {
+      navigate("/" + href);
+    } else {
+      const element = document.querySelector(href);
+      element?.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   const navLinks = [
-    { name: 'Engenharia', href: '#projects' },
-    { name: 'Sobre', href: '#about' },
-    { name: 'Contato', href: 'https://wa.me/5562995325553' },
+    { name: "Engenharia", href: "#projects" },
+    { name: "Sobre", href: "#about" },
+    { name: "Contato", href: "https://wa.me/556198031185" }, // Updated number
   ];
 
   return (
-    <nav className={`fixed top-0 w-full z-[100] transition-all duration-500 ${isScrolled ? 'py-4' : 'py-8'}`}>
+    <nav
+      className={`fixed top-0 w-full z-[100] transition-all duration-500 ${
+        isScrolled ? "py-4" : "py-8"
+      }`}
+    >
       <div className="container mx-auto px-6 flex justify-center">
-        <motion.div 
+        <motion.div
           className="glass rounded-full px-6 py-3 flex items-center gap-12"
           initial={{ y: -100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
         >
           {/* Logo Section */}
-          <a href="#" className="flex items-center gap-2 group">
+          <button
+            onClick={(e) => handleNavigation(e, "#")}
+            className="flex items-center gap-2 group"
+          >
             <div className="w-8 h-8 rounded-full bg-white flex items-center justify-center group-hover:bg-accent transition-colors duration-500">
               <Terminal size={16} className="text-black" />
             </div>
-            <span className="font-display font-bold text-white tracking-tighter uppercase text-sm">Gust4dev</span>
-          </a>
+            <span className="font-display font-bold text-white tracking-tighter uppercase text-sm">
+              Gust4dev
+            </span>
+          </button>
 
           {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a 
-                key={link.name} 
+              <a
+                key={link.name}
                 href={link.href}
-                className="text-[10px] font-mono font-bold text-secondary hover:text-white uppercase tracking-[0.2em] transition-colors"
+                onClick={(e) => handleNavigation(e, link.href)}
+                className="text-[10px] font-mono font-bold text-secondary hover:text-white uppercase tracking-[0.2em] transition-colors cursor-pointer"
               >
                 {link.name}
               </a>
             ))}
           </div>
 
-          <button 
+          <button
             className="md:hidden text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
@@ -60,7 +99,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
@@ -68,11 +107,11 @@ const Navbar: React.FC = () => {
           >
             <div className="glass rounded-3xl p-8 space-y-6">
               {navLinks.map((link) => (
-                <a 
-                  key={link.name} 
+                <a
+                  key={link.name}
                   href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-2xl font-display font-bold text-white"
+                  onClick={(e) => handleNavigation(e, link.href)}
+                  className="block text-2xl font-display font-bold text-white cursor-pointer"
                 >
                   {link.name}
                 </a>

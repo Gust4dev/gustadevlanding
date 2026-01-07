@@ -604,3 +604,649 @@ export const TEMPLATES: Template[] = [
     ],
   },
 ];
+
+export const PROCESS_STEPS = [
+  {
+    step: 1,
+    title: "Escolha o Template",
+    description: "Navegue por nossa galeria e escolha o design ideal.",
+    icon: ShoppingCart,
+  },
+  {
+    step: 2,
+    title: "Defina o Pacote",
+    description: "Selecione o plano que melhor atende suas necessidades.",
+    icon: Scissors,
+  },
+  {
+    step: 3,
+    title: "Entrega Rápida",
+    description: "Site no ar em 7 a 10 dias com sua marca e conteúdo.",
+    icon: Car,
+  },
+  {
+    step: 4,
+    title: "Suporte Garantido",
+    description: "Acompanhamento pós-entrega para garantir seu sucesso.",
+    icon: Building2,
+  },
+];
+
+export const STATS = [
+  { label: "Projetos Entregues", value: "20+" },
+  { label: "Clientes Satisfeitos", value: "10+" },
+  { label: "Tempo de Resposta", value: "-1h" },
+  { label: "Avaliação Média", value: "4.9/5" },
+];
+
+export const FAQ_ITEMS = [
+  {
+    question: "Quanto tempo demora?",
+    answer:
+      "Geralmente entregamos a primeira versão em 3 dias e o projeto finalizado em até 10 dias.",
+  },
+  {
+    question: "Preciso pagar hospedagem à parte?",
+    answer:
+      "Não nos primeiros 3 meses. Depois, temos planos acessíveis de manutenção ou você pode hospedar onde quiser.",
+  },
+  {
+    question: "O que acontece se eu não gostar?",
+    answer:
+      "Trabalhamos com revisões ilimitadas até você aprovar o design antes da programação.",
+  },
+  {
+    question: "Vocês fazem customização?",
+    answer:
+      "Sim! Os templates são a base, mas adaptamos cores, logos e textos para sua marca.",
+  },
+  {
+    question: "Como é o suporte?",
+    answer:
+      "Suporte via WhatsApp direto com o desenvolvedor, sem robôs, garantindo agilidade e entendimento do seu problema.",
+  },
+  {
+    question: "Posso pagar parcelado?",
+    answer:
+      "Sim, dividimos o valor do projeto em até 12x no cartão de crédito.",
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    name: "Carlos Silva",
+    business: "Rei do Burger",
+    text: "Antes eu perdia 25% do faturamento pro iFood. Agora tenho meu próprio sistema e economizo mais de R$ 2.000/mês. Valeu cada centavo.",
+    rating: 5,
+    delay: 0,
+  },
+  {
+    name: "Ana Oliveira",
+    business: "Studio Bella",
+    text: "Minha agenda vivia bagunçada no WhatsApp. Com o site, as clientes agendam sozinhas e eu só recebo a notificação. Mudou minha vida!",
+    rating: 5,
+    delay: 0.1,
+  },
+  {
+    name: "Marcos Santos",
+    business: "Barbearia Viking",
+    text: "O visual do site ficou incrível, passa muita credibilidade. Meus clientes adoraram o clube de assinaturas.",
+    rating: 5,
+    delay: 0.2,
+  },
+];
+
+export const BLOG_POSTS = [
+  {
+    id: "sistema-delivery-proprio",
+    slug: "como-montar-delivery-sem-ifood",
+    title: "Como Montar um Delivery Sem Pagar iFood: Guia Completo 2025",
+    summary:
+      "Descubra como pequenos ajustes no seu cardápio e atendimento podem transformar seu faturamento e economizar milhares de reais em taxas.",
+    date: "12 Jan 2025",
+    readTime: "8 min",
+    image:
+      "https://images.unsplash.com/photo-1556740758-90de374c12ad?q=80&w=1170&auto=format&fit=crop",
+    content: `
+      ## O Problema Real: Quanto Você Está Perdendo?
+
+      Vamos fazer as contas:
+
+      - **100 pedidos por mês** (média de um delivery pequeno/médio)
+      - **Ticket médio de R$ 50** por pedido
+      - **Faturamento mensal:** R$ 5.000
+      - **Taxa do iFood:** 25% em média
+      - **Você perde:** R$ 1.250/mês = **R$ 15.000/ano**
+
+      E isso sem contar:
+      - Taxa de entrega que fica pro app
+      - Promoções obrigatórias pra aparecer bem ranqueado
+      - Tempo perdido gerenciando o app
+
+      **A pergunta é:** vale a pena pagar R$ 15.000/ano pra um intermediário quando você poderia ter seu próprio sistema?
+
+      ## Por Que o iFood É Caro (E Não Vai Ficar Mais Barato)
+
+      O iFood não é vilão — eles prestam um serviço. O problema é que **você fica refém**:
+
+      1. **Dependência total:** Se o app cair, você não vende
+      2. **Sem dados dos clientes:** Você não sabe quem compra, não pode fazer remarketing
+      3. **Taxas sobem:** Começou em 12%, hoje tá 25-30%
+      4. **Guerra de preços:** Você compete com quem dá 50% de desconto
+
+      Não é sustentável a longo prazo.
+
+      ## A Solução: Delivery Próprio (Mais Simples Do Que Você Pensa)
+
+      Você não precisa sair do iFood 100% amanhã. A estratégia é:
+
+      **Fase 1:** Ter seu sistema próprio funcionando  
+      **Fase 2:** Incentivar clientes a pedirem direto (desconto, fidelidade)  
+      **Fase 3:** Reduzir dependência do app aos poucos
+
+      ### O Que Você Precisa (Checklist)
+
+      ✅ **Site/sistema de pedidos** (cardápio digital responsivo)  
+      ✅ **Integração com WhatsApp** (pedido vai direto pro seu ZAP)  
+      ✅ **Sistema de pagamento** (PIX é suficiente no começo)  
+      ✅ **Delivery próprio OU Loggi/Borzo** (bem mais barato que app)
+
+      ### Passo a Passo Prático
+
+      #### 1. Tenha um Site/Cardápio Digital
+      Não precisa ser complexo. Precisa ser:
+      - Rápido no celular (90% dos pedidos vêm do mobile)
+      - Com fotos boas dos pratos
+      - Preços claros
+      - Botão direto pro WhatsApp
+
+      **Custo médio:** R$ 500-1.500 (investimento único)  
+      **ROI:** Se paga em 2-3 meses com a economia
+
+      #### 2. Configure o Fluxo de Pedidos
+      Cliente entra no site → Escolhe os produtos →
+      Clica "Finalizar Pedido" → Abre WhatsApp com pedido pronto →
+      Você confirma e envia
+
+      Simples assim. Sem complicação.
+
+      #### 3. Divulgue o Link do Seu Site
+      - **Instagram:** Link na bio + stories com promoção "10% off pedindo direto"
+      - **Google Meu Negócio:** Adiciona o link lá
+      - **WhatsApp Status:** Posta o cardápio
+      - **Embalagens:** Adesivo com QR Code pro site
+
+      #### 4. Incentive o Cliente a Pedir Direto
+      Estratégias que funcionam:
+      - "Pedindo pelo nosso site você ganha 10% de desconto"
+      - "Programa de fidelidade: A cada 10 pedidos, 1 grátis" (só pra quem pede direto)
+      - "Entrega mais rápida pedindo direto" (porque você prioriza)
+
+      ## Calculadora de Economia Real
+
+      Vamos simular seu cenário:
+
+      **Cenário Atual (100% iFood):**
+      - 100 pedidos/mês × R$ 50 = R$ 5.000
+      - Taxa 25% = você perde R$ 1.250/mês
+      - **Lucro líquido:** R$ 3.750
+
+      **Cenário Futuro (70% próprio, 30% iFood):**
+      - 70 pedidos diretos × R$ 50 = R$ 3.500 (sem taxa)
+      - 30 pedidos iFood × R$ 50 = R$ 1.500 - 25% taxa = R$ 1.125
+      - **Lucro líquido:** R$ 4.625
+
+      **Diferença:** Você ganha **R$ 875/mês a mais = R$ 10.500/ano**
+
+      E quanto custa ter seu sistema? R$ 500-1.500 uma vez. **Se paga em menos de 2 meses.**
+
+      ## Erros Comuns (Evite Isso)
+
+      ❌ **"Vou sair do iFood de uma vez"** → Não. Migre aos poucos.  
+      ❌ **"Vou fazer um site de R$ 10.000"** → Desnecessário. Começa simples.  
+      ❌ **"Meus clientes não vão usar"** → Se você der incentivo, usam sim.  
+      ❌ **"É muito complicado"** → Não é. É mais fácil que gerenciar o app do iFood.
+
+      ## Cases Reais (Anápolis/GO)
+
+      **Hamburgueria Local:**
+      - Antes: 100% iFood, perdia R$ 2.000/mês em taxa
+      - Depois: 60% pedidos próprios, economiza R$ 1.200/mês
+      - **Resultado:** Investiu R$ 800 no site, já recuperou 15x o valor
+
+      **Pizzaria Centro:**
+      - Implementou site + número exclusivo pra pedidos diretos
+      - Oferece "borda grátis pra quem pede pelo site"
+      - **Resultado:** 45% dos pedidos migraram em 3 meses
+
+      ## Conclusão: Vale a Pena?
+
+      Se você faz **pelo menos 50 pedidos/mês**, ter seu delivery próprio **é essencial**.
+
+      O iFood é útil? Sim. Mas não pode ser sua única fonte.
+
+      **Próximos Passos:**
+      1. Calcule quanto você perde por mês em taxas
+      2. Decida: quero continuar pagando isso pra sempre?
+      3. Se não, invista em ter seu sistema
+
+      **Precisa de ajuda pra montar seu delivery próprio?**  
+      Tenho templates prontos específicos pra delivery, com cardápio digital, integração WhatsApp e tudo que você precisa.
+
+      👉 [Fale comigo no WhatsApp](https://wa.me/556198031185)
+
+      ---
+
+      *Gustavo Rodrigues - Desenvolvedor Full-Stack especializado em sistemas para negócios locais*
+    `,
+  },
+  {
+    id: "erros-barbearia-instagram",
+    slug: "5-erros-barbearias-instagram",
+    title: "5 Erros Que Barbearias Cometem no Instagram (E Como Corrigir)",
+    summary:
+      "Você posta todo dia e não lota a agenda? Descubra o que está afastando seus clientes.",
+    date: "15 Jan 2025",
+    readTime: "7 min",
+    image:
+      "https://images.unsplash.com/photo-1589985502143-057e63eef1c9?q=80&w=687&auto=format&fit=crop",
+    content: `
+      ## Erro #1: Link da Bio "Quebrado" ou Inexistente
+
+      ### O Problema:
+      Cliente vê seu corte foda, quer agendar, clica no perfil e... nada. Ou um link que não abre.
+      **Você perdeu o cliente em 3 segundos.**
+
+      ### A Solução:
+      Link direto pro WhatsApp com mensagem pré-definida.
+      
+      **Implementação:**
+      - Se você não tem site: usa o link do WhatsApp direto
+      - Formato: \`https://wa.me/55SEUNUMERO?text=Olá,%20quero%20agendar%20um%20horário\`
+      - Ferramentas grátis: Linktree, Beacons (pra colocar múltiplos links)
+
+      **Impacto:** +40% de agendamentos (sem esforço extra)
+
+      ---
+
+      ## Erro #2: Postar SÓ Fotos de Cortes (E Nada Mais)
+
+      ### O Problema:
+      Seu feed tá assim:
+      - Foto de corte
+      - Foto de corte
+      - Foto de corte
+      - Foto de corte
+
+      Cliente pensa: "Legal, mas o que eu faço com isso?"
+
+      **Você não tá ENGAJANDO, tá só mostrando portfólio.**
+
+      ### A Solução:
+      Alternar conteúdos:
+
+      **40% - Trabalhos (cortes, antes/depois)**  
+      **30% - Bastidores (stories, humor, dia-a-dia)**  
+      **20% - Dicas úteis ("Como cuidar do fade em casa", "Produtos que uso")**  
+      **10% - Promoções/CTA ("Vagas pra hoje à tarde", "Programa de fidelidade")**
+
+      **Exemplos de posts que ENGAJAM:**
+      - "Qual corte combina com cada tipo de rosto?" (carrossel educativo)
+      - "Meu cliente pediu um corte impossível... olha o resultado" (storytelling)
+      - "3 erros que você comete ao lavar o cabelo" (dica útil)
+      - "Quinta-feira lenta? 10% off pra quem agendar agora" (oferta urgente)
+
+      **Impacto:** Seu alcance aumenta (algoritmo prioriza engajamento, não só visualizações)
+
+      ---
+
+      ## Erro #3: Não Usar Stories Corretamente
+
+      ### O Problema:
+      Você posta no feed 1x por dia. Stories? Quase nada.
+
+      **Mas o algoritmo DO INSTAGRAM PRIORIZA STORIES.** Quem vê seu story tem 10x mais chance de te procurar do que quem só vê feed.
+
+      ### A Solução:
+      Postar nos stories **3-5x por dia**, com propósito:
+
+      **Manhã (9h):** "Bom dia! Quem tá precisando de corte hoje?" (call to action)  
+      **Meio-dia (12h):** "Cliente do dia" mostrando trabalho (social proof)  
+      **Tarde (15h):** "Vagas disponíveis pra hoje à tarde, quem quer?" (urgência)  
+      **Noite (19h):** Bastidor engraçado, música, algo leve  
+      **Antes de dormir:** "Amanhã começa cedo, reserve seu horário" (último lembrete)
+
+      **Ferramentas úteis:**
+      - Caixinha de perguntas: "Qual corte você quer fazer?"
+      - Enquete: "Fade alto ou baixo?" (engaja mesmo quem não é cliente)
+      - Countdown: "Promoção acaba em..." (cria urgência)
+
+      **Impacto:** Stories = topo da mente. Quando o cliente pensar "preciso cortar cabelo", lembra de VOCÊ.
+
+      ---
+
+      ## Erro #4: Não Ter Sistema de Fidelidade Digital
+
+      ### O Problema:
+      Cliente corta com você 1x, gosta, mas no mês seguinte... esquece e vai noutra barbearia mais perto.
+
+      **Você não retém cliente. Cada corte é uma "venda fria".**
+
+      ### A Solução:
+      Programa de fidelidade digital:
+
+      **Modelo Simples (Gratuito):**
+      "A cada 5 cortes, o 6º é grátis. Rastreio pelo WhatsApp."
+
+      **Modelo Profissional (Site/App):**
+      Cliente cadastra, acumula pontos automaticamente, recebe notificação "Você tá perto do corte grátis!".
+
+      **Por que funciona?**
+      - Cliente volta MAIS VEZES (fidelidade aumenta 35%)
+      - Você cria previsibilidade (sabe quantos clientes vão voltar)
+      - Cliente não vai pro concorrente (perde os pontos acumulados)
+
+      **Exemplo Real:**
+      Barbearia em Anápolis implementou fidelidade digital → taxa de retorno subiu de 40% pra 68% em 3 meses.
+
+      **Impacto:** Mais clientes recorrentes = faturamento estável
+
+      ---
+
+      ## Erro #5: Não Ter Site Próprio (Depender 100% do Instagram)
+
+      ### O Problema:
+      Instagram é ALUGADO. Você não é dono:
+      - Conta cai? Perde tudo
+      - Algoritmo muda? Seu alcance despenca
+      - Cliente não tá no Instagram? Não te acha
+
+      **E tem mais:** Instagram não ranqueia no Google. Se alguém buscar "barbearia perto de mim", você não aparece.
+
+      ### A Solução:
+      Ter um site simples (não precisa ser complexo) com:
+
+      ✅ **Serviços e preços**  
+      ✅ **Galeria de trabalhos**  
+      ✅ **Agendamento online**  
+      ✅ **Google Maps integrado**
+
+      **Vantagens:**
+      1. **Aparece no Google:** "Barbearia Anápolis" → você ranqueia
+      2. **Profissionalismo:** Cliente vê site, confia mais
+      3. **Independência:** Instagram cai? Seu site continua funcionando
+      4. **Conversão maior:** Site converte 3x mais que Instagram (cliente tá no "modo compra")
+
+      **Custo real:** R$ 700-1.500 (investimento único)  
+      **Retorno:** Se converte 2-3 clientes a mais por mês, já pagou
+
+      ---
+
+      ## Bônus: Checklist de Correção Rápida
+
+      Use essa lista HOJE pra melhorar seu Instagram:
+
+      **⬜ Link na bio leva pro agendamento direto**  
+      **⬜ Último post foi há menos de 24h**  
+      **⬜ Postei pelo menos 3 stories hoje**  
+      **⬜ Tenho pelo menos 1 post educativo/útil no feed (não só cortes)**  
+      **⬜ Tenho algum sistema de fidelidade (mesmo que manual)**  
+      **⬜ Respondo DMs em menos de 2 horas**  
+      **⬜ Meu número de WhatsApp tá visível no perfil**
+
+      Se você marcou **menos de 5**, tá deixando dinheiro na mesa.
+
+      ---
+
+      ## Conclusão: Instagram É Ferramenta, Não Solução
+
+      Instagram é ESSENCIAL pra barbearia em 2025. Mas não pode ser sua ÚNICA presença digital.
+
+      A combinação matadora é:
+      - **Instagram:** Pra engajar, mostrar trabalho, criar autoridade
+      - **Site próprio:** Pra converter, ranquear no Google, ter independência
+      - **WhatsApp:** Pra fechar agendamento rápido
+
+      **Próximo Passo:**
+      Se você quer profissionalizar de vez e ter um sistema completo (site + agendamento + fidelidade), tenho templates prontos específicos pra barbearias.
+
+      👉 [Fale comigo no WhatsApp](https://wa.me/556198031185)
+
+      ---
+
+      *Gustavo Rodrigues - Desenvolvedor Full-Stack | Especialista em Sistemas para Barbearias*
+    `,
+  },
+  {
+    id: "estetica-automotiva-site-proprio",
+    slug: "estetica-automotiva-precisa-site",
+    title: "Por Que Sua Estética Automotiva Precisa de um Site Próprio",
+    summary:
+      "Depender só do Instagram para serviços de alto valor (High Ticket) é um erro que custa caro. Entenda porquê.",
+    date: "18 Jan 2025",
+    readTime: "6 min",
+    image:
+      "https://images.unsplash.com/photo-1680005084654-b57c0f6e5b77?q=80&w=1172&auto=format&fit=crop",
+    content: `
+      ## A Realidade do Mercado Automotivo em 2025
+
+      Seu cliente não é qualquer um. É alguém que:
+      - Tem um carro de R$ 80.000-200.000+
+      - Valoriza qualidade e detalhes
+      - Compara MUITO antes de contratar
+      - Busca no Google antes de decidir
+
+      **E aqui tá o problema:**
+
+      Quando ele busca "estética automotiva [sua cidade]" no Google... **você não aparece**. Só aparecem concorrentes com site.
+
+      Instagram não ranqueia no Google. WhatsApp também não.
+
+      **Resultado:** Você perde 60-70% dos clientes em potencial antes mesmo deles te conhecerem.
+
+      ---
+
+      ## 5 Razões Inegáveis Pra Ter um Site
+
+      ### 1. Cliente de Serviço Caro Não Fecha Pelo Instagram
+
+      Pensa comigo:
+
+      **Serviço de R$ 80 (lavagem simples):** Instagram funciona. Cliente decide rápido.
+
+      **Serviço de R$ 2.000 (cristalização + polimento):** Cliente quer:
+      - Ver portfólio completo
+      - Entender o processo
+      - Ler depoimentos
+      - Comparar com concorrentes
+      - Sentir segurança
+
+      Tudo isso ele faz MELHOR num site do que em stories do Instagram.
+
+      **Exemplo Real:**
+      Estética em Brasília implementou site com galeria antes/depois bem detalhada → conversão de orçamentos subiu 45% em 2 meses.
+
+      ---
+
+      ### 2. Ranqueamento no Google = Clientes Te Achando Sozinhos
+
+      Instagram: Você tem que PAGAR pra aparecer (ads) ou depender de seguidores.
+
+      Site otimizado: Cliente busca "vitrificação automotiva [sua cidade]" → você aparece GRÁTIS no Google.
+
+      **Volume de buscas mensais (exemplo Goiânia):**
+      - "Estética automotiva goiânia": 1.200 buscas/mês
+      - "Polimento automotivo goiânia": 800 buscas/mês
+      - "Vitrificação de pintura goiânia": 600 buscas/mês
+
+      Se você não tá ranqueando pra essas palavras, tá deixando **2.000-3.000 clientes em potencial** irem pro concorrente TODO MÊS.
+
+      **Como ranquear:**
+      - Site otimizado (títulos, descrições, conteúdo)
+      - Google Meu Negócio conectado ao site
+      - Blog com artigos úteis ("Diferença entre polimento e cristalização")
+
+      ---
+
+      ### 3. Portfólio Organizado Converte Mais
+
+      Instagram: 
+      - Cliente rola feed aleatoriamente
+      - Fotos se perdem no meio de memes/stories/propagandas
+      - Difícil achar aquele trabalho específico que ele quer ver
+
+      Site com Galeria:
+      - Categorias organizadas (Polimento, Higienização Interna, PPF, Vitrificação)
+      - Antes/Depois lado a lado
+      - Filtros por tipo de serviço ou carro
+      - Cliente vê exatamente o que procura
+
+      **Taxa de conversão:**
+      - Instagram: 2-5% (de visualizações pra orçamento)
+      - Site bem feito: 8-12%
+
+      ---
+
+      ### 4. Agendamento Online Aumenta Conversão em 35%
+
+      **Fluxo atual (sem site):**
+      1. Cliente vê seu Instagram
+      2. Manda DM
+      3. Espera você responder (às vezes demora)
+      4. Troca 10 mensagens
+      5. Às vezes desiste no meio (cansou de esperar)
+
+      **Fluxo com site:**
+      1. Cliente entra no site
+      2. Escolhe o serviço
+      3. Vê o preço/detalhes
+      4. Clica "Solicitar Orçamento" → vai direto pro WhatsApp com mensagem pronta
+      5. Você só confirma
+
+      **Tempo pro cliente:** 2 minutos (ao invés de 2 horas ou desistir)
+
+      **Resultado:** +35% de conversão comprovado.
+
+      ---
+
+      ### 5. Profissionalismo = Cobrança Mais Alta
+
+      Cliente compara 3 estéticas:
+
+      **Estética A:** Só Instagram, posts irregulares, sem site  
+      → Cliente pensa: "É profissional mesmo? Parece iniciante."  
+      → Orçamento: R$ 800
+
+      **Estética B:** Instagram + site profissional com galeria, depoimentos, processo detalhado  
+      → Cliente pensa: "Esses caras são sérios. Vale o investimento."  
+      → Orçamento: R$ 1.500 (mesmo serviço)
+
+      **Site bem feito te dá AUTORIDADE pra cobrar mais caro.**
+
+      E cliente paga. Porque ele vê valor.
+
+      ---
+
+      ## Objeções Comuns (E Por Que Estão Erradas)
+
+      ### ❌ "Meus clientes vêm tudo por indicação, não preciso de site"
+
+      Hoje sim. Mas:
+      - E se você quer CRESCER?
+      - E se você quer cliente NOVO que não te conhece?
+      - Indicação tem limite. Google não tem.
+
+      ### ❌ "Site é caro, vou gastar R$ 10.000"
+
+      Não precisa. Um site funcional pra estética automotiva custa R$ 900-2.000.
+
+      Se isso converter 2 serviços a mais por mês (exemplo: 2x R$ 1.000 = R$ 2.000), **já pagou o investimento no primeiro mês**.
+
+      ### ❌ "Instagram já mostra meu trabalho"
+
+      Instagram mostra pra quem JÁ te segue.
+
+      Site mostra pra QUALQUER UM que buscar seu serviço no Google (mesmo sem te conhecer).
+
+      ### ❌ "Eu não sei mexer em site, vou ficar dependente de dev"
+
+      Sites modernos têm painel admin super simples. Você atualiza fotos, preços, tudo sozinho.
+
+      É mais fácil que postar no Instagram.
+
+      ---
+
+      ## Case Real: Estética Que Implementou Site
+
+      **Antes (só Instagram + WhatsApp):**
+      - 15-20 orçamentos/mês
+      - Taxa de conversão: 30%
+      - Faturamento: R$ 18.000/mês
+
+      **Depois (Instagram + Site otimizado):**
+      - 35-40 orçamentos/mês (dobrou)
+      - Taxa de conversão: 45%
+      - Faturamento: R$ 32.000/mês
+
+      **ROI do site:** Investiu R$ 1.500, recuperou em menos de 1 mês.
+
+      ---
+
+      ## O Que Seu Site Precisa Ter (Checklist)
+
+      ✅ **Galeria Antes/Depois** bem organizada (por tipo de serviço)  
+      ✅ **Descrição de cada serviço** (o que inclui, quanto tempo demora, preço base)  
+      ✅ **Depoimentos de clientes** (vídeos são ouro)  
+      ✅ **Botão direto pro WhatsApp** em toda página  
+      ✅ **Formulário de orçamento** rápido  
+      ✅ **Google Maps** integrado (localização)  
+      ✅ **Certificados/Produtos utilizados** (3M, Vonixx, etc — gera confiança)  
+      ✅ **Blog** com dicas ("Como cuidar da vitrificação", "Quando fazer polimento")
+
+      **Prazo de entrega:** 7-10 dias pra ter tudo funcionando.
+
+      ---
+
+      ## Quanto Custa Ter um Site? (Valor Real)
+
+      **Investimento:**
+      - Site profissional com tudo que listei acima: R$ 900-3.000 (depende da complexidade)
+      - Domínio (.com.br): R$ 40/ano
+      - Hospedagem: R$ 0-20/mês (muitos devs incluem no pacote por 1 ano)
+
+      **Total investimento inicial:** R$ 1.000-3.000
+
+      **Retorno esperado:**
+      - Se converter 3 serviços a mais por mês (R$ 1.000/serviço) = +R$ 3.000/mês
+      - Em 1 mês já pagou
+      - Restante é lucro puro
+
+      **ROI:** 300-500% no primeiro ano.
+
+      ---
+
+      ## Conclusão: Não Espere a Concorrência Te Passar
+
+      Mercado automotivo é competitivo. Cliente tem opção.
+
+      Se você não aparece no Google, não passa profissionalismo, não facilita o orçamento... **cliente vai pro que aparece e facilita**.
+
+      **Próximo Passo:**
+
+      Se você quer ter um site profissional, com galeria de trabalhos, agendamento online e tudo otimizado pra conversão, tenho templates prontos específicos pra estéticas automotivas.
+
+      Implemento em 7-10 dias, você já começa a ranquear no Google e a receber mais orçamentos.
+
+      👉 [Fale comigo no WhatsApp](https://wa.me/556198031185)
+
+      ---
+
+      *Gustavo Rodrigues - Desenvolvedor Full-Stack | Especialista em Sites para Estéticas Automotivas*
+    `,
+  },
+];
+
+export const ROI_DATA = {
+  averageTicket: 50,
+  marketplaceFee: 0.23, // 23%
+};
